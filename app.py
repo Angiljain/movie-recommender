@@ -6,7 +6,6 @@ import pickle
 import requests
 import os
 
-import os
 api_key = os.getenv("TMDB_API_KEY")
 secret = os.getenv("SECRET_KEY")
 
@@ -24,7 +23,8 @@ movies_list = movies['title'].values.tolist()
 # Fetch movie poster
 def fetch_poster(movie_id):
     try:
-        url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=90ba7445de4b660876fe1830ffd7cc40"
+        # Use TMDB API key from environment variable
+        url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}"
         response = requests.get(url)
         data = response.json()
         
