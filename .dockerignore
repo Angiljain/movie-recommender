@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.git/
+.env
+Main.ipynb
+requirements_utf8.txt
+*.pyc
